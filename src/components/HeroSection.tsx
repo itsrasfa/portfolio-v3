@@ -5,8 +5,8 @@ export const HeroSection = () => {
   return (
     <div className="relative h-screen w-full overflow-hidden bg-black">
       <Layout>
-        <div className="absolute bottom-0 left-1/2 z-10 h-full w-full -translate-x-1/2 transform overflow-hidden">
-          <div className="absolute max-sm:bottom-[300px] bottom-[120px] left-1/2 h-[100px] w-[700px] max-sm:w-[300px] max-sm:h-[60px] -translate-x-1/2 transform overflow-hidden bg-[radial-gradient(50%_50%_at_50%_50%,#5506ba_0%,rgba(10,10,10,0)_100%)] blur-[60px] max-sm:blur-[30px]" />
+        <div className="absolute bottom-0 left-1/2 z-10 h-full w-full -translate-x-1/2 transform overflow-visible">
+          <div className="absolute max-sm:bottom-[300px] bottom-[120px] left-1/2 h-[100px] w-[700px] max-sm:w-[300px] max-sm:h-[60px] -translate-x-1/2 transform bg-[radial-gradient(50%_50%_at_50%_50%,#5506ba_0%,rgba(10,10,10,0)_100%)] blur-[60px] max-sm:blur-[30px] will-change-[filter]" />
 
           <div className="absolute max-sm:bottom-[240px] bottom-[180px] left-[15%] h-[140px] w-[500px] max-sm:w-[200px] max-sm:h-[60px] bg-[radial-gradient(50%_50%_at_50%_50%,#296dff_0%,rgba(0,0,0,0)_100%)] blur-[80px] max-sm:blur-[30px] opacity-70" />
 
