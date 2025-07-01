@@ -1,6 +1,4 @@
-'use client';
 import { Sparkle } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { Layout } from './Layout';
 
 const experiences = [
@@ -36,20 +34,20 @@ export const Experience = () => {
         <section className="relative z-10 mx-auto max-w-7xl px-6 pb-24 pt-20 md:pt-40 flex justify-center">
           <ol className="relative border-s-2 rounded border-[#8ab6ff]/20 w-full max-w-xl">
             {experiences.map((job, i) => (
-              <motion.li
+              <li
                 key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.2 }}
-                className="my-5 ms-4"
+                className="my-5 ms-4 opacity-0 animate-fade-up"
+                style={{
+                  animationDelay: `${i * 150}ms`,
+                  animationFillMode: 'forwards',
+                }}
               >
                 <Sparkle
                   size={16}
                   fill="#8ab6ff"
                   strokeWidth={1}
                   color="#8ab6ff"
-                  className="mt-1.5 -start-[9px] absolute"
+                  className="mt-1.5 -start-[25px] absolute"
                 />
                 <time className="mb-1 pt-2 block text-sm font-normal leading-none text-gray-400">
                   {job.period}
@@ -68,7 +66,7 @@ export const Experience = () => {
                       {paragraph.trim()}
                     </p>
                   ))}
-              </motion.li>
+              </li>
             ))}
           </ol>
         </section>

@@ -1,7 +1,5 @@
-'use client';
 import Link from 'next/link';
 import { ExternalLink, Github, Sparkle } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { Layout } from './Layout';
 
 const featuredProjects = [
@@ -66,13 +64,10 @@ export const Projects = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuredProjects.map((project, index) => (
-              <motion.div
+              <div
                 key={project.name}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="group justify-between flex flex-col overflow-hidden rounded-2xl bg-white/5 shadow-md backdrop-blur-lg transition hover:shadow-xl px-6 py-8"
+                className={`group justify-between flex flex-col overflow-hidden rounded-2xl bg-white/5 shadow-md backdrop-blur-lg hover:shadow-xl px-6 py-8 opacity-0 animate-fade-up`}
+                style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'forwards' }}
               >
                 <div className="flex items-center justify-between">
                   <h2 className="text-2xl font-semibold">{project.name}</h2>
@@ -128,7 +123,7 @@ export const Projects = () => {
                     Visualizar aplicação online
                   </Link>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </section>
