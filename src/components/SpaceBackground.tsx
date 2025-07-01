@@ -24,7 +24,10 @@ export const SpaceBackground = () => {
           fpsLimit: 60,
           background: { color: '#000000' },
           particles: {
-            number: { value: 200, density: { enable: true, area: 1200 } },
+            number: {
+              value: 200,
+              density: { enable: true, area: 1200 },
+            },
             color: { value: '#ffffff' },
             shape: { type: 'circle' },
             opacity: {
@@ -59,7 +62,10 @@ export const SpaceBackground = () => {
               maxWidth: 768,
               options: {
                 particles: {
-                  number: { value: 120 },
+                  number: {
+                    value: 160,
+                    density: { enable: true, area: 600 },
+                  },
                   size: { value: { min: 0.4, max: 1.8 } },
                 },
               },
@@ -67,7 +73,10 @@ export const SpaceBackground = () => {
             {
               maxWidth: 1200,
               options: {
-                particles: { number: { value: 160 } },
+                particles: {
+                  number: { value: 180 },
+                  density: { enable: true, area: 1000 },
+                },
               },
             },
           ],
