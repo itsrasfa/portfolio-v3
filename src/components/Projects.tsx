@@ -1,8 +1,10 @@
+'use client';
 import Link from 'next/link';
 import { ExternalLink, Github, Sparkle } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { Layout } from './Layout';
 
-const projects = [
+const featuredProjects = [
   {
     name: 'Film Locations',
     link: 'https://film-locations-kappa.vercel.app',
@@ -13,7 +15,7 @@ const projects = [
       'Dados gerenciados via CMS (Hygraph)',
       'Mapa interativo com MapLibre GL',
       'Filtro por gêneros cinematográficos',
-      'Favoritar locações com gerenciamento global de estado via React Context',
+      'Favoritar locações com gerenciamento de estado via React Context',
     ],
     technologies: [
       'React',
@@ -63,12 +65,28 @@ export const Projects = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <div
+            {featuredProjects.map((project, index) => (
+              <motion.div
                 key={project.name}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="group justify-between flex flex-col overflow-hidden rounded-2xl bg-white/5 shadow-md backdrop-blur-lg transition hover:shadow-xl px-6 py-8"
               >
-                <h2 className="text-2xl font-semibold">{project.name}</h2>
+                <div className="flex items-center justify-between">
+                  <h2 className="text-2xl font-semibold">{project.name}</h2>
+                  {project.github && (
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:opacity-80 transition"
+                    >
+                      <Github size={22} />
+                    </Link>
+                  )}
+                </div>
 
                 <p className="text-[#d1d1d1]/90 leading-relaxed mt-2">
                   {project.description}
@@ -109,20 +127,8 @@ export const Projects = () => {
                     <ExternalLink size={16} />
                     Visualizar aplicação online
                   </Link>
-
-                  {project.github && (
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-2 text-sm text-white hover:bg-white/20 transition"
-                    >
-                      <Github size={16} />
-                      GitHub
-                    </Link>
-                  )}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </section>

@@ -1,5 +1,6 @@
 import { SquareArrowOutUpRight } from 'lucide-react';
 import { Layout } from './Layout';
+import Link from 'next/link';
 
 export const HeroSection = () => {
   return (
@@ -30,10 +31,13 @@ export const HeroSection = () => {
           </h1>
 
           <p className="mb-8 text-gray-200">Rafaela, Front-end Developer</p>
-          <button className="flex items-center gap-3 cursor-pointer font-medium px-6 py-3 rounded-full bg-white/10 border border-white/10 text-white shadow-md backdrop-blur-md transition hover:bg-transparent hover:shadow-lg">
+          <Link
+            href="/CV.pdf"
+            className="flex items-center gap-3 cursor-pointer font-medium px-6 py-3 rounded-full bg-white/10 border border-white/10 text-white shadow-md backdrop-blur-md transition hover:bg-transparent hover:shadow-lg"
+          >
             Download CV
             <SquareArrowOutUpRight size={17} />
-          </button>
+          </Link>
         </div>
       </Layout>
     </div>
