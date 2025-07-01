@@ -19,7 +19,7 @@ export const Contact = () => {
     <Layout>
       <section className="relative z-10 text-center mx-auto max-w-7xl px-5 pt-30 pb-24 md:pt-40 flex flex-col gap-12 text-white">
         <div>
-          <h1 className="text-center text-5xl font-bold bg-gradient-to-r from-[#a0c4ff] via-[#402554] to-[#211144] bg-clip-text text-transparent">
+          <h1 className="text-center text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#8ab6ff] via-[#aecbff] to-[#dde9ff] bg-clip-text text-transparent">
             Vamos trabalhar juntos
           </h1>
           <h2 className="text-center text-white/70">Entre em contato</h2>

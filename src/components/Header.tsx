@@ -10,7 +10,7 @@ export const Header = () => {
     { href: '/', icon: FiHome, label: 'Home' },
     { href: '/projects', icon: FiFolder, label: 'Projetos' },
     { href: '/experience', icon: FiBriefcase, label: 'Experiência' },
-    { href: '/skills', icon: FiTool, label: 'Ferramentas' },
+    { href: '/skills', icon: FiTool, label: 'Skills' },
     { href: '/contact', icon: FiMail, label: 'Contato' },
   ];
 

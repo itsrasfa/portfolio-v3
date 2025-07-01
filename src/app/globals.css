@@ -1,14 +1,8 @@
 @import "tailwindcss";
 
-
-:root {
-  --font-sans: var(--font-poppins);
-  --font-charm: var(--font-charm); 
-}
-
 body {
-  background: #111111;
-  font-family: var(--font-sans), sans-serif;
+  background: #000000;
+  font-family: var(--font-outfit), sans-serif;
 }
 
 @keyframes spin-slow {

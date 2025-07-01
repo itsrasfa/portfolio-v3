@@ -19,6 +19,7 @@ import {
 import { VscVscode } from 'react-icons/vsc';
 import { FaGitAlt } from 'react-icons/fa';
 import { Layout } from '@/components/Layout';
+import { useEffect, useState } from 'react';
 
 const icons = [
   { Icon: SiJavascript, label: 'JavaScript' },
@@ -39,19 +40,41 @@ const icons = [
   { Icon: FaGitAlt, label: 'Git' },
 ];
 
-const orbitConfigs = [
-  { radius: 90, size: 200, rotate: 360, duration: 25 },
-  { radius: 140, size: 300, rotate: -360, duration: 35 },
-  { radius: 190, size: 400, rotate: 360, duration: 45 },
-];
-
 export const Skills = () => {
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const orbitConfigs = [
+    {
+      radius: windowWidth > 1024 ? 90 : windowWidth > 640 ? 75 : 65,
+      size: windowWidth > 1024 ? 200 : windowWidth > 640 ? 180 : 150,
+      rotate: 360,
+      duration: 25,
+    },
+    {
+      radius: windowWidth > 1024 ? 140 : windowWidth > 640 ? 120 : 100,
+      size: windowWidth > 1024 ? 300 : windowWidth > 640 ? 260 : 220,
+      rotate: -360,
+      duration: 35,
+    },
+    {
+      radius: windowWidth > 1024 ? 190 : windowWidth > 640 ? 160 : 140,
+      size: windowWidth > 1024 ? 400 : windowWidth > 640 ? 350 : 280,
+      rotate: 360,
+      duration: 45,
+    },
+  ];
   const orbits = [icons.slice(0, 5), icons.slice(5, 10), icons.slice(10, 15)];
 
   return (
     <Layout>
-      <div className="relative z-20 mt-32 p-1 flex items-center justify-center min-h-[600px] text-white">
-
+      <div className="relative z-20 mt-32 p-1 flex items-center justify-center min-h-[400px] md:min-h-[600px] text-white">
         {orbitConfigs.map(({ size }, i) => (
           <div
             key={`circle-${i}`}
@@ -60,7 +83,6 @@ export const Skills = () => {
           />
         ))}
 
-    
         {orbits.map((orbitIcons, index) => {
           const { radius, size, rotate, duration } = orbitConfigs[index];
 
@@ -91,14 +113,17 @@ export const Skills = () => {
                       top: '50%',
                       left: '50%',
                       transform: `translate(${x}px, ${y}px) translate(-50%, -50%)`,
+                      width: windowWidth < 640 ? 50 : 70,
                     }}
                   >
                     <Icon
-                      size={28}
+                      size={windowWidth < 640 ? 20 : 28}
                       title={label}
                       className="text-white opacity-80 hover:scale-125 transition-transform"
                     />
-                    <span className="block text-xs mt-1">{label}</span>
+                    <span className="block text-[10px] sm:text-xs mt-1">
+                      {label}
+                    </span>
                   </div>
                 );
               })}

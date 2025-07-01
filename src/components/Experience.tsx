@@ -30,14 +30,14 @@ export const Experience = () => {
     <main className="relative min-h-screen w-full overflow-hidden bg-black text-white">
       <Layout>
         <section className="relative z-10 mx-auto max-w-7xl px-6 pb-24 pt-20 md:pt-40 flex justify-center">
-          <ol className="relative border-s-2 rounded border-[#5E5886]/20 w-full max-w-xl">
+          <ol className="relative border-s-2 rounded border-[#8ab6ff]/20 w-full max-w-xl">
             {jobs.map((job, i) => (
               <li key={i} className="my-5 ms-4">
                 <Sparkle
                   size={16}
-                  fill="#676094"
+                  fill="#8ab6ff"
                   strokeWidth={1}
-                  color="#676094"
+                  color="#8ab6ff"
                   className="mt-1.5 -start-[9px] absolute"
                 />
                 <time className="mb-1 pt-2 block text-sm font-normal leading-none text-gray-400">

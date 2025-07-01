@@ -32,7 +32,7 @@ const projects = [
       'Dashboard desenvolvida com Next.js que usa APIs públicas para mostrar dados de criptomoedas em tempo real.',
     features: [
       'Gráficos interativos com Recharts',
-      'Filtro por período (ex: 24h, 7d, 30d) e ordenação',
+      'Filtro por período (ex: 24h, 7d, 30d)',
       'Troca de moeda entre (BRL/USD) e idioma (PT/EN)',
       'Design responsivo para todos os dispositivos',
     ],
@@ -42,6 +42,7 @@ const projects = [
       'Recharts',
       'CoinGecko API',
       'Open Exchange Rates API',
+      'Zustand',
       'Tailwind',
     ],
   },
@@ -53,7 +54,7 @@ export const Projects = () => {
       <Layout>
         <section className="relative z-10 mx-auto max-w-7xl px-5 pt-30 pb-24 md:pt-40 flex flex-col gap-8">
           <div>
-            <h1 className="text-center text-5xl font-bold bg-gradient-to-r from-[#a0c4ff] via-[#402554] to-[#211144] bg-clip-text text-transparent mb-2">
+            <h1 className="text-center text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#8ab6ff] via-[#aecbff] to-[#dde9ff] bg-clip-text text-transparent pb-2">
               Projetos em Destaque
             </h1>
             <h2 className="text-center text-white/70">
@@ -78,9 +79,9 @@ export const Projects = () => {
                     <li key={feature} className="flex items-center gap-2">
                       <Sparkle
                         size={16}
-                        fill="#676094"
+                        fill="#8ab6ff"
                         strokeWidth={1}
-                        color="#676094"
+                        color="#8ab6ff"
                       />
                       {feature}
                     </li>
