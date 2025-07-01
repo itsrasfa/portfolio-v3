@@ -16,7 +16,6 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Rafaela - Frontend Developer ',
-  description: 'Frontend Developer apaixonada por experiências digitais.',
   icons: {
     icon: '/icon.svg',
   },
