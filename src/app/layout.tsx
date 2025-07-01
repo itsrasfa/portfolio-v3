@@ -15,8 +15,11 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Portfólio',
+  title: 'Rafaela - Frontend Developer ',
   description: 'Frontend Developer apaixonada por experiências digitais.',
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -25,7 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${outfit.variable} ${playfairDisplay.variable}`}>
+    <html
+      lang="pt-BR"
+      className={`${outfit.variable} ${playfairDisplay.variable}`}
+    >
       <body className="antialiased">{children}</body>
     </html>
   );
