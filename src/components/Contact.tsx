@@ -17,7 +17,7 @@ export const Contact = () => {
 
   return (
     <Layout>
-      <section className="relative z-10 text-center mx-auto max-w-7xl px-5 pt-30 pb-24 md:pt-40 flex flex-col gap-12 text-white">
+      <section className="relative z-10 text-center mx-auto max-w-7xl px-5  pt-25 md:pt-30 pb-24  flex flex-col gap-12 text-white">
         <div>
           <h1 className="text-center text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#8ab6ff] via-[#aecbff] to-[#dde9ff] bg-clip-text text-transparent">
             Vamos trabalhar juntos

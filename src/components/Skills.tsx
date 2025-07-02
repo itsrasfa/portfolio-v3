@@ -20,6 +20,7 @@ import { VscVscode } from 'react-icons/vsc';
 import { FaGitAlt } from 'react-icons/fa';
 import { Layout } from '@/components/Layout';
 import { useEffect, useState } from 'react';
+import { Sparkles } from 'lucide-react';
 
 const icons = [
   { Icon: SiJavascript, label: 'JavaScript' },
@@ -74,7 +75,16 @@ export const Skills = () => {
 
   return (
     <Layout>
-      <div className="relative z-20 mt-32 p-1 flex items-center justify-center min-h-[400px] md:min-h-[600px] text-white">
+      <h2 className="text-center flex justify-center items-center gap-2 text-white/70 relative z-20 mt-32 px-18">
+        <Sparkles
+          size={16}
+          fill="#8ab6ff"
+          strokeWidth={1}
+          color="#8ab6ff"
+        />{' '}
+        Principais ferramentas e tecnologias do meu dia a dia
+      </h2>
+      <div className="relative z-20 p-1 flex items-center justify-center min-h-[400px] md:min-h-[500px] text-white">
         {orbitConfigs.map(({ size }, i) => (
           <div
             key={`circle-${i}`}

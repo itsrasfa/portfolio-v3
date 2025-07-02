@@ -52,7 +52,7 @@ export const Projects = () => {
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-black text-white">
       <Layout>
-        <section className="relative z-10 mx-auto max-w-7xl px-5 pt-30 pb-24 md:pt-40 flex flex-col gap-8">
+        <section className="relative z-10 mx-auto max-w-7xl px-5 pt-25 pb-24 md:pt-30 flex flex-col gap-8">
           <div>
             <h1 className="text-center text-3xl md:text-5xl font-bold bg-gradient-to-r from-[#8ab6ff] via-[#aecbff] to-[#dde9ff] bg-clip-text text-transparent pb-2">
               Projetos em Destaque

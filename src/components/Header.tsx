@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { FiHome, FiFolder, FiBriefcase, FiTool, FiMail } from 'react-icons/fi';
+import { FiHome, FiFolder, FiBriefcase, FiCode, FiMail } from 'react-icons/fi';
 
 export const Header = () => {
   const pathname = usePathname();
@@ -10,7 +10,7 @@ export const Header = () => {
     { href: '/', icon: FiHome, label: 'Home' },
     { href: '/projects', icon: FiFolder, label: 'Projetos' },
     { href: '/experience', icon: FiBriefcase, label: 'Experiência' },
-    { href: '/skills', icon: FiTool, label: 'Skills' },
+    { href: '/skills', icon: FiCode, label: 'Skills' },
     { href: '/contact', icon: FiMail, label: 'Contato' },
   ];
 

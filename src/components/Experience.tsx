@@ -1,5 +1,7 @@
+'use client';
 import { Sparkle } from 'lucide-react';
 import { Layout } from './Layout';
+import { useState } from 'react';
 
 const experiences = [
   {
@@ -28,46 +30,75 @@ const experiences = [
 ];
 
 export const Experience = () => {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
+  const toggleExpand = (index: number) => {
+    setExpanded((prev) => (prev === index ? null : index));
+  };
+
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-black text-white">
       <Layout>
         <section className="relative z-10 mx-auto max-w-7xl px-6 pb-24 pt-20 md:pt-40 flex justify-center">
           <ol className="relative border-s-2 rounded border-[#8ab6ff]/20 w-full max-w-xl">
-            {experiences.map((job, i) => (
-              <li
-                key={i}
-                className="my-5 ms-4 opacity-0 animate-fade-up"
-                style={{
-                  animationDelay: `${i * 150}ms`,
-                  animationFillMode: 'forwards',
-                }}
-              >
-                <Sparkle
-                  size={16}
-                  fill="#8ab6ff"
-                  strokeWidth={1}
-                  color="#8ab6ff"
-                  className="mt-1.5 -start-[25px] absolute"
-                />
-                <time className="mb-1 pt-2 block text-sm font-normal leading-none text-gray-400">
-                  {job.period}
-                </time>
-                <h3 className="text-lg font-semibold text-white">
-                  {job.company} - {job.role}
-                </h3>
-                {job.summary
-                  .split('\n')
-                  .filter(Boolean)
-                  .map((paragraph, idx) => (
-                    <p
-                      key={idx}
-                      className="mb-4 text-base font-normal text-gray-400"
-                    >
-                      {paragraph.trim()}
+            {experiences.map((job, i) => {
+              const paragraphs = job.summary
+                .split('\n')
+                .filter(Boolean)
+                .map((p) => p.trim());
+
+              const isExpanded = expanded === i;
+              const shouldTruncate = paragraphs.length > 1 && !isExpanded;
+
+              return (
+                <li
+                  key={i}
+                  className="my-5 ms-4 opacity-0 animate-fade-up"
+                  style={{
+                    animationDelay: `${i * 150}ms`,
+                    animationFillMode: 'forwards',
+                  }}
+                >
+                  <Sparkle
+                    size={16}
+                    fill="#8ab6ff"
+                    strokeWidth={1}
+                    color="#8ab6ff"
+                    className="mt-1.5 -start-[25px] absolute"
+                  />
+                  <time className="mb-1 pt-2 block text-sm font-normal leading-none text-gray-400">
+                    {job.period}
+                  </time>
+                  <h3 className="text-lg font-semibold text-white">
+                    {job.company} - {job.role}
+                  </h3>
+
+                  {shouldTruncate ? (
+                    <p className="mb-4 text-base font-normal text-gray-400">
+                      {paragraphs[0]}...
                     </p>
-                  ))}
-              </li>
-            ))}
+                  ) : (
+                    paragraphs.map((paragraph, idx) => (
+                      <p
+                        key={idx}
+                        className="mb-4 text-base font-normal text-gray-400"
+                      >
+                        {paragraph}
+                      </p>
+                    ))
+                  )}
+
+                  {paragraphs.length > 1 && (
+                    <button
+                      onClick={() => toggleExpand(i)}
+                      className="text-sm text-[#8ab6ff] hover:underline transition cursor-pointer"
+                    >
+                      {isExpanded ? 'Mostrar menos' : 'Ler mais'}
+                    </button>
+                  )}
+                </li>
+              );
+            })}
           </ol>
         </section>
       </Layout>
