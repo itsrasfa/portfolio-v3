@@ -1,4 +1,6 @@
 'use client';
+import { useEffect, useState } from 'react';
+import { Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 import {
   SiJavascript,
@@ -6,9 +8,7 @@ import {
   SiReact,
   SiNextdotjs,
   SiTailwindcss,
-  SiAntdesign,
-  SiRadixui,
-  SiFramer,
+  SiZod,
   SiReactquery,
   SiPostman,
   SiBeekeeperstudio,
@@ -18,9 +18,8 @@ import {
 } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
 import { FaGitAlt } from 'react-icons/fa';
+import { LuClipboardList } from 'react-icons/lu';
 import { Layout } from '@/components/Layout';
-import { useEffect, useState } from 'react';
-import { Sparkles } from 'lucide-react';
 
 const icons = [
   { Icon: SiJavascript, label: 'JavaScript' },
@@ -28,9 +27,8 @@ const icons = [
   { Icon: SiReact, label: 'React' },
   { Icon: SiNextdotjs, label: 'Next.js' },
   { Icon: SiTailwindcss, label: 'Tailwind CSS' },
-  { Icon: SiAntdesign, label: 'Ant Design' },
-  { Icon: SiRadixui, label: 'Radix UI' },
-  { Icon: SiFramer, label: 'Framer Motion' },
+  { Icon: SiZod, label: 'Zod' },
+  { Icon: LuClipboardList, label: 'React Hook Form' },
   { Icon: SiPostman, label: 'Postman' },
   { Icon: SiReactquery, label: 'React Query' },
   { Icon: SiBeekeeperstudio, label: 'Beekeeper' },
@@ -75,13 +73,8 @@ export const Skills = () => {
 
   return (
     <Layout>
-      <h2 className="text-center flex justify-center items-center gap-2 text-white/70 relative z-20 mt-32 px-18">
-        <Sparkles
-          size={16}
-          fill="#8ab6ff"
-          strokeWidth={1}
-          color="#8ab6ff"
-        />{' '}
+      <h2 className="text-center flex flex-col justify-center items-center gap-2 text-white/70 relative z-20 mt-32 px-18">
+        <Sparkles size={20} fill="#8ab6ff" strokeWidth={1} color="#8ab6ff" />{' '}
         Principais ferramentas e tecnologias do meu dia a dia
       </h2>
       <div className="relative z-20 p-1 flex items-center justify-center min-h-[400px] md:min-h-[500px] text-white">
