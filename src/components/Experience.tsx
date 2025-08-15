@@ -5,6 +5,11 @@ import { useState } from 'react';
 
 const experiences = [
   {
+   company: 'Voltera',
+   role: 'Desenvolvedora Front-end',
+   period: '2025 - Atual',
+  },
+  {
     company: 'Zuckt Labs',
     role: 'Desenvolvedora Front-end',
     period: '2024 - 2025 (1 ano e 6 meses)',
