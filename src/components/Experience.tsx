@@ -47,7 +47,7 @@ export const Experience = () => {
         <section className="relative z-10 mx-auto max-w-7xl px-6 pb-24 pt-20 md:pt-40 flex justify-center">
           <ol className="relative border-s-2 rounded border-[#8ab6ff]/20 w-full max-w-xl">
             {experiences.map((job, i) => {
-              const paragraphs = job.summary
+              const paragraphs = job?.summary
                 .split('\n')
                 .filter(Boolean)
                 .map((p) => p.trim());
